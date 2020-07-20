@@ -25,5 +25,20 @@
 
 搜索页面
 .
-![未标题-8](https://user-images.githubusercontent.com/65821989/87960796-66d96200-cae7-11ea-8d88-0f4b66eea5b4.jpg)
+
 .
+![未标题-9](https://user-images.githubusercontent.com/65821989/87962816-60001e80-caea-11ea-9bbb-9d89a0c5e3ce.jpg)
+.
+![未标题-10](https://user-images.githubusercontent.com/65821989/87962866-727a5800-caea-11ea-8396-07e1977ffcac.jpg)
+.
+歌单界面
+.
+![未标题-11](https://user-images.githubusercontent.com/65821989/87962929-8de56300-caea-11ea-84c8-8022d83ea88a.jpg)
+.
+![未标题-12](https://user-images.githubusercontent.com/65821989/87962978-9ccc1580-caea-11ea-9357-7411067dbbd1.jpg)
+
+MV界面
+.
+![未标题-13](https://user-images.githubusercontent.com/65821989/87963020-ac4b5e80-caea-11ea-9494-fc2b98e9e470.jpg)
+.
+![未标题-14](https://user-images.githubusercontent.com/65821989/87963065-bb321100-caea-11ea-93aa-992573a26e97.jpg)
