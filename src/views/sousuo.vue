@@ -17,12 +17,12 @@
           <th>时长</th>
         </thead>
         <tbody>
-          <tr v-for='(item, index) in songList' :key='index' class="el-table__row" @click="play(item.id)">
+          <tr v-for='(item, index) in songList' :key='index' class="el-table__row">
             <td id="tab-td"> {{ index+1 }}</td>
             <td style="width: 350px" id="new-td">
                 <span class="songName" @click="player(item.id)"> {{  item.name }}</span>
-               <p v-if="item.alias.length !=0 ">{{ item.alias[0] }}</p>
-               <span v-if="item.mvid!=0" class="el-icon-video-camera"></span>
+               <p v-if="item.alias.length !=0 " >{{ item.alias[0] }}</p>
+               <span v-if="item.mvid!=0" class="el-icon-video-camera" @click="tomv(item.mvid)"></span>
             </td>
             <td style="width: 180px">{{ item.artists[0].name }}</td>
             <td style="width: 250px">{{ item.album.name }}</td>
@@ -70,7 +70,12 @@
 
     <div class="block" id="pageNum">
         <el-pagination layout="prev, pager, next" 
-        :total="1000">
+        :total="total"
+        :page-size="5" 
+        :current-page="page"
+         @current-change="handleCurrentChange"
+        :limit='limit'
+        >
         </el-pagination>
     </div>
   </div>
@@ -83,13 +88,15 @@ export default {
     data() {
       return {
          activeName: 'first',
-         limit: 10,
+         limit: 8,
          offset: '',
          type: '1',
          songList: [],
          playlist: [],
          mv: [1],
          count: '',
+         total: 1,          //总数
+         page: 1              //页数
       };
     },
     created(){
@@ -122,22 +129,24 @@ export default {
                 params:{
                     keywords: this.$route.query.name,
                     type: this.type,
-                    limit: this.limit
+                    limit: this.limit,
+                    // offset: (this.page-1)*this.limit,
                 }                
             }).then(res => {
                  console.log(res)
                 if(this.type == 1){     //歌曲搜索结果
                     this.songList = res.data.result.songs
+                    this.total = res.data.result.songCount
                     for(let i=0; i < this.songList.length; i++){
                     let time = this.songList[i].duration/1000;
-                    let fen = parseInt(time/60)
-                    if(fen < 10){
-                        fen = '0'+ fen;
-                    }
-                    let s =parseInt(time%60)
-                    if( s < 10){
-                        s = '0'+s
-                    }
+                    let fen = parseInt(time/60).toString().padStart(2, '0')
+                    // if(fen < 10){
+                    //     fen = '0'+ fen;
+                    // }
+                    let s =parseInt(time%60).toString().padStart(2, '0')
+                    // if( s < 10){
+                    //     s = '0'+s
+                    // }
                     this.songList[i].duration = `${fen}:${s}`
                     }
                 this.count = res.data.result.songCount                    
@@ -183,6 +192,11 @@ export default {
       },
       tomv(id){
           this.$router.push('./mvContent?name=' + id)
+      },
+      handleCurrentChange(val){
+          this.page = val
+          this.getlist()
+          console.log(this.limit);
       }
     }
 }

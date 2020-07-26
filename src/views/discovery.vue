@@ -9,7 +9,7 @@
       </el-carousel>
     </div> 
 <!-- 推荐歌单 -->
-    <div id="recommend">
+<div id="recommend">
       <h3>推荐歌单</h3>
       <div class="songseet">
         <div v-for="(item,index) in list" :key='index' class="songseetBox" @click="toPlaylist(item.id)">
@@ -24,6 +24,7 @@
         </div>  
       </div> 
     </div>
+    
 <!-- 最新音乐 -->
     <div class="newmusic">
       <h3>最新音乐</h3>
@@ -50,7 +51,7 @@
               <div class="triangle"></div><span>{{ mv[index].playCount }}</span>
           </div>
         </div>
-        <div class="discovery-MV-box-music">{{ mv[index].name }}</div>
+        <div class="discovery-MV-box-music" :title="mv[index].name">{{ mv[index].name }}</div>
         <div class="discovery-MV-box-name">{{ mv[index].artistName }}</div>
       </div>
     </div>
@@ -111,6 +112,12 @@ export default {
         axios.get('https://autumnfish.cn/personalized/mv').then(
           res =>{         //mv
             this.mv = res.data.result;
+            for(let i=0;i<this.mv.length;i++){
+              if(this.mv[i].playCount >= 100000){
+                this.mv[i].playCount = parseInt(this.mv[i].playCount/10000) + '万'
+              }
+            }
+            
             // console.log(res);
           }
         )
@@ -134,9 +141,10 @@ export default {
       border-radius: 15px;
     }
     #recommend{
-      margin: 30px 80px;
+      margin: 30px auto;
       /* background-color: gold; */
       text-align: left;
+      width: 900px;
     }
     .songseet{
       margin-top: 30px;
@@ -196,17 +204,19 @@ export default {
       margin-top: -10px;
     }
     #recommend h3{
-      margin-left: 62px;
       margin-top: 20px;
+      margin-left: 15px;
     }
     img{
       width: 100%;
       height: 100%;
     }
     .newmusic{
-      margin:10px 130px;
+      margin:10px auto;
       padding: 10px;
       text-align: left;
+      width: 880px;
+
     }
     .newmusic-box{
       margin-top: 30px;
@@ -243,7 +253,7 @@ export default {
     }
     #discovery-MV{
       width: 900px;
-      margin:  20px 0 50px 130px;
+      margin:  20px auto 50px;
       position: relative;
       height: 200px;
     }
@@ -287,6 +297,9 @@ export default {
     .discovery-MV-box-music{
       margin-left: 10px;
       width: 200px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
     .discovery-MV-box-name{
       margin-bottom: 60px;

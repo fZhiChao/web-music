@@ -1,6 +1,9 @@
 <template>
   <div id="mvContent">
       <div class="mvContent-mvplay">
+          <div>
+              
+          </div>
           <h3>MV详情</h3> 
           <div class="video">
               <video :src="mvplay" controls autoplay></video>
@@ -178,6 +181,7 @@ export default {
         display: flex;
         /* background-color: lightcoral; */
         margin: 50px 50px;
+        flex-wrap: wrap;
     }
     .mvContent-mvplay{
         float: left;
@@ -267,5 +271,8 @@ export default {
     }
     .recommend-mv::after{
         clear: both;
+    }
+    #pageNum{
+        margin: auto;
     }
 </style>

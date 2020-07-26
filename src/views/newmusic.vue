@@ -22,7 +22,7 @@
             <td id="tab-td"> {{index+1}}</td>
             <td style="width: 150px">
               <div class="table-img">
-                <img :src="item.album.blurPicUrl" alt="">
+                <img v-lazy="item.album.blurPicUrl" alt="">
               </div>
             </td>
             <td style="width: 250px" id="new-td">
@@ -100,7 +100,7 @@ export default {
     }
     #newmusic-box{
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
     }
     .actived{
       margin-right: 20px;

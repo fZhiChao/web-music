@@ -231,7 +231,8 @@ export default {
       overflow: hidden;
     }
     #musicName{
-      width: 250px;
+      width: 220px;
+      height: 42px;
       overflow: hidden;
       word-break:break-all;
       -webkit-box-orient:vertical;

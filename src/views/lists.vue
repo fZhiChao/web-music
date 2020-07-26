@@ -122,10 +122,8 @@ export default {
       width: 870px;
       height: 150px;
       /* background-color: rosybrown; */
-      margin-left: 140px;
+      margin: 20px auto 30px;
       border-radius: 8px;
-      margin-top: 20px;
-      margin-bottom: 30px;
       text-align: left;
       display: flex;
       position: relative;

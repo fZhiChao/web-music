@@ -1,5 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
+import VueLazyload from 'vue-lazyload'  //vue懒加载
+
+Vue.use(VueLazyload,{
+  preLoad: 1.3,
+  error: 'dist/error.png',
+  // loading: 'dist/loading.gif',
+  attempt: 5
+  })
 
 Vue.config.productionTip = false
 
