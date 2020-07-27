@@ -55,6 +55,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 MV详情界面
 .
-![Uploading 87963020-ac4b5e80-caea-11ea-9494-fc2b98e9e470.jpg…]()
+![87963020-ac4b5e80-caea-11ea-9494-fc2b98e9e470](https://user-images.githubusercontent.com/65821989/88522385-d8099f80-d028-11ea-87ab-2d60939b25a1.jpg)
 .
 ![未标题-14](https://user-images.githubusercontent.com/65821989/87963065-bb321100-caea-11ea-93aa-992573a26e97.jpg)
