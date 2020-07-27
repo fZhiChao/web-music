@@ -53,8 +53,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 .
 ![未标题-12](https://user-images.githubusercontent.com/65821989/87962978-9ccc1580-caea-11ea-9357-7411067dbbd1.jpg)
 
-MV界面
+MV详情界面
 .
-![未标题-13](https://user-images.githubusercontent.com/65821989/87963020-ac4b5e80-caea-11ea-9494-fc2b98e9e470.jpg)
+![Uploading 87963020-ac4b5e80-caea-11ea-9494-fc2b98e9e470.jpg…]()
 .
 ![未标题-14](https://user-images.githubusercontent.com/65821989/87963065-bb321100-caea-11ea-93aa-992573a26e97.jpg)
