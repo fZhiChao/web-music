@@ -1,4 +1,4 @@
-# test
+# web-music
 
 ## Project setup
 ```
